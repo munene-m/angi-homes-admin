@@ -199,9 +199,9 @@ const AdminLayout = () => {
                 }`}
               >
                 <p className="truncate text-sm font-semibold text-(--color-primary)">
-                  {session?.user.name || 'User'}
+                  {session?.user?.name || 'User'}
                 </p>
-                <p className="truncate text-xs text-(--color-primary)/60">{session?.user.email}</p>
+                <p className="truncate text-xs text-(--color-primary)/60">{session?.user?.email}</p>
               </div>
             </div>
             <button

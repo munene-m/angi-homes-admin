@@ -27,7 +27,7 @@ export const AuthzProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const loadPermissions = useCallback(async () => {
-    if (!session?.user.id) {
+    if (!session?.user?.id) {
       setPermissions([]);
       setIsSuperAdmin(false);
       setIsLoading(false);
@@ -37,7 +37,7 @@ export const AuthzProvider = ({ children }: { children: React.ReactNode }) => {
     setIsLoading(true);
     try {
       const response = await apiRequest<MyUserResponse>(
-        `/api/admin/users/${encodeURIComponent(session.user.id)}`,
+        `/api/admin/users/${encodeURIComponent(session.user?.id ?? '')}`,
       );
       setPermissions(response.data.permissions ?? []);
       setIsSuperAdmin(response.data.roles.some((role) => role.code === 'super_admin'));
@@ -47,7 +47,7 @@ export const AuthzProvider = ({ children }: { children: React.ReactNode }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [session?.user.id]);
+  }, [session?.user?.id]);
 
   useEffect(() => {
     void loadPermissions();
