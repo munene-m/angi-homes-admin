@@ -35,12 +35,15 @@ const LoginPage = () => {
         onError: (ctx) => {
           setError(ctx.error.message || 'Unable to sign in.');
         },
+        onSuccess: () => {
+          navigate(redirectPath, { replace: true });
+        },
       },
     );
 
     setIsSubmitting(false);
 
-    if (response.data) {
+    if (!response.error) {
       navigate(redirectPath, { replace: true });
     }
   };
