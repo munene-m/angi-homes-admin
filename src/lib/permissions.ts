@@ -1,0 +1,25 @@
+export const permissionCodes = {
+  usersRead: 'users.read',
+  usersCreate: 'users.create',
+  usersUpdate: 'users.update',
+  usersDelete: 'users.delete',
+  rolesAssign: 'roles.assign',
+  residentsRead: 'residents.read',
+  residentsCreate: 'residents.create',
+  residentsUpdate: 'residents.update',
+  residentsDelete: 'residents.delete',
+  staffRead: 'staff.read',
+  staffCreate: 'staff.create',
+  staffUpdate: 'staff.update',
+  staffDelete: 'staff.delete',
+  appointmentsRead: 'appointments.read',
+  appointmentsCreate: 'appointments.create',
+  appointmentsUpdate: 'appointments.update',
+  appointmentsDelete: 'appointments.delete',
+  visitsRead: 'visits.read',
+  visitsCreate: 'visits.create',
+  visitsUpdate: 'visits.update',
+  visitsDelete: 'visits.delete',
+} as const;
+
+export type PermissionCode = (typeof permissionCodes)[keyof typeof permissionCodes];
