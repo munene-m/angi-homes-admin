@@ -130,7 +130,7 @@ const AdminLayout = () => {
               }`}
             >
               <BadgeDollarSign className="size-5" />
-              <span className="whitespace-nowrap text-2xl font-semibold">Angi Homes</span>
+              <span className="whitespace-nowrap text-2xl font-semibold">Angi Homes LLC</span>
             </div>
             <button
               type="button"
